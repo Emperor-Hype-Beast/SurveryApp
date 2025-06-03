@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Survey Form</h1>
+            <a href="/results" class="btn btn-primary">View Survey Results</a>
+        </div>
+
+        <form id="surveyForm" class="row g-3">
+            <!-- Personal Details Section -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h3>Personal Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="surname" class="form-label">Surname *</label>
+                                <input type="text" class="form-control" id="surname" name="surname" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Names *</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactNumber" class="form-label">Contact Number *</label>
+                                <input type="text" class="form-control" id="contactNumber" name="contactNumber" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date" class="form-label">Date *</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="age" class="form-label">Age *</label>
+                                <input type="number" class="form-control" id="age" name="age" min="5" max="120" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Preferences Section -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h3>What is your favourite food? (You can select more than one option)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pizza" name="foods" value="pizza">
+                                    <label class="form-check-label" for="pizza">Pizza</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pasta" name="foods" value="pasta">
+                                    <label class="form-check-label" for="pasta">Pasta</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="papAndWors" name="foods" value="papAndWors">
+                                    <label class="form-check-label" for="papAndWors">Pap and Wors</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="chicken" name="foods" value="chicken">
+                                    <label class="form-check-label" for="chicken">Chicken</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="beef" name="foods" value="beef">
+                                    <label class="form-check-label" for="beef">Beef</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="other" name="foods" value="other">
+                                    <label class="form-check-label" for="other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Section -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h3>On a scale of 1 to 5 indicate whether you strongly agree (5) or strongly disagree (1)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label class="form-label">I like to eat out *</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="eatOutRating" id="eatOut1" value="1" required>
+                                    <label class="form-check-label" for="eatOut1">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="eatOutRating" id="eatOut2" value="2">
+                                    <label class="form-check-label" for="eatOut2">2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="eatOutRating" id="eatOut3" value="3">
+                                    <label class="form-check-label" for="eatOut3">3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="eatOutRating" id="eatOut4" value="4">
+                                    <label class="form-check-label" for="eatOut4">4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="eatOutRating" id="eatOut5" value="5">
+                                    <label class="form-check-label" for="eatOut5">5</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">I like to watch movies *</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchMoviesRating" id="movies1" value="1" required>
+                                    <label class="form-check-label" for="movies1">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchMoviesRating" id="movies2" value="2">
+                                    <label class="form-check-label" for="movies2">2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchMoviesRating" id="movies3" value="3">
+                                    <label class="form-check-label" for="movies3">3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchMoviesRating" id="movies4" value="4">
+                                    <label class="form-check-label" for="movies4">4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchMoviesRating" id="movies5" value="5">
+                                    <label class="form-check-label" for="movies5">5</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">I like to watch TV *</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchTvRating" id="tv1" value="1" required>
+                                    <label class="form-check-label" for="tv1">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchTvRating" id="tv2" value="2">
+                                    <label class="form-check-label" for="tv2">2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchTvRating" id="tv3" value="3">
+                                    <label class="form-check-label" for="tv3">3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchTvRating" id="tv4" value="4">
+                                    <label class="form-check-label" for="tv4">4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="watchTvRating" id="tv5" value="5">
+                                    <label class="form-check-label" for="tv5">5</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">I like to listen to the radio *</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="listenToRadioRating" id="radio1" value="1" required>
+                                    <label class="form-check-label" for="radio1">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="listenToRadioRating" id="radio2" value="2">
+                                    <label class="form-check-label" for="radio2">2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="listenToRadioRating" id="radio3" value="3">
+                                    <label class="form-check-label" for="radio3">3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="listenToRadioRating" id="radio4" value="4">
+                                    <label class="form-check-label" for="radio4">4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="listenToRadioRating" id="radio5" value="5">
+                                    <label class="form-check-label" for="radio5">5</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success btn-lg px-5">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/survey.js}"></script>
+</body>
+</html>
