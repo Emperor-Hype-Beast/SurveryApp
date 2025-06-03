@@ -35,5 +35,5 @@ Before running this application, make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/survey-application.git
+git clone https://github.com/Emperor-Hype-Beast/SurveryApp/blob/main/README.md
 cd survey-application
